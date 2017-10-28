@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import List from './../shared/List';
 
 import * as actions from './../actions/users';
 
@@ -10,10 +13,21 @@ class Home extends Component {
     }
   }
 
+  renderUser = user => {
+    return (
+      <li key={user.id} className="User">
+        <Link to={`/${user.id}/tracks`} className="User-username">
+          {user.username} - {user.full_name || ''}
+        </Link>
+      </li>
+    );
+  };
+
   render() {
     return (
       <div className="Home">
-        <h1>Home</h1>
+        <h1>Users</h1>
+        <List items={this.props.users}>{this.renderUser}</List>
       </div>
     );
   }
