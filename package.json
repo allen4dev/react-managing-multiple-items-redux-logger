@@ -1,5 +1,5 @@
 {
-  "name": "react-perftools-reduxlogger-multiple-items",
+  "name": "reduxlogger-managing-multiple-items",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
